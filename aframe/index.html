@@ -7,7 +7,7 @@
     <meta name="description" content="Basic example for Point Cloud component."></meta>
 
     <link rel="stylesheet" href="style.css">
-    
+
     <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-pointcloud-component@0.4.0/dist/aframe-pointcloud-component.min.js"></script>
   </head>
@@ -35,9 +35,17 @@
 
     </a-scene>
 
-    <div class="ui">
+<div class="ui">
+      <div>
   <button id="rotLeft">Sukti kairėn</button>
   <button id="rotRight">Sukti dešinėn</button>
+      </div>
+    <div>
+      <button id="moveForward">Pirmyn</button>
+      <button id="moveBack">Atgal</button>
+      <button id="moveLeft">Kairėn</button>
+      <button id="moveRight">Dešinėn</button>
+    </div>
 </div>
 
 <script src="js/controls.js"></script>

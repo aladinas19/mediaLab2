@@ -21,3 +21,41 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+  const moveStep = 0.2;
+
+  document.getElementById("moveForward").addEventListener("click", () => {
+    const pos = model.getAttribute("position");
+    model.setAttribute("position", {
+      x: pos.x,
+      y: pos.y,
+      z: pos.z - moveStep
+    });
+  });
+
+  document.getElementById("moveBack").addEventListener("click", () => {
+    const pos = model.getAttribute("position");
+    model.setAttribute("position", {
+      x: pos.x,
+      y: pos.y,
+      z: pos.z + moveStep
+    });
+  });
+
+  document.getElementById("moveLeft").addEventListener("click", () => {
+    const pos = model.getAttribute("position");
+    model.setAttribute("position", {
+      x: pos.x - moveStep,
+      y: pos.y,
+      z: pos.z
+    });
+  });
+
+  document.getElementById("moveRight").addEventListener("click", () => {
+    const pos = model.getAttribute("position");
+    model.setAttribute("position", {
+      x: pos.x + moveStep,
+      y: pos.y,
+      z: pos.z
+    });
+  });
