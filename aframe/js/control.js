@@ -8,14 +8,7 @@ window.addEventListener("load", () => {
     return;
   }
 
-  // CLICK: random spalva (veiks ir su A-Frame click)
-  model.addEventListener("click", () => {
-    const randomColor =
-      "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0");
-    model.setAttribute("color", randomColor);
-  });
 
-  // Kai A-Frame pilnai paruošia objektą
   model.addEventListener("loaded", () => {
     console.log("Modelis pilnai užkrautas");
 
