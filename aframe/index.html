@@ -1,41 +1,71 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Lab2 - VR application</title>
+<head>
+  <meta charset="utf-8">
 
-    <meta name="description" content="Basic example for Point Cloud component."></meta>
+  <title>Lab2 - VR application</title>
 
-    <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Basic example for Point Cloud component.">
 
-    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-pointcloud-component@0.4.0/dist/aframe-pointcloud-component.min.js"></script>
-  </head>
-  <body>
+  <link rel="stylesheet" href="style.css">
 
-    <a-scene>
+  <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
 
-      <a-plane rotation="-90 0 0" height="100" width="100" color="#1f3b4d"></a-plane>
+  <script src="https://unpkg.com/aframe-pointcloud-component@0.4.0/dist/aframe-pointcloud-component.min.js"></script>
 
-      <a-light type="ambient" color="#445451"></a-light>
-      <a-light type="point" intensity="2" position="2 4 4"></a-light>
+</head>
 
-      <a-sky color="#0b1d2a"></a-sky>
+<body>
 
-      <a-entity laser-controls></a-entity>
+  <a-scene>
 
-      <a-pointcloud id="model"
-          scale="0.5 0.5 0.5" 
-          position="0 1 -3" 
-          src="url(Sphere.ply)" 
-          size="0.05"
-          texture="url(VGTU-logo.png)"
-          depthWrite="false">
-      </a-pointcloud>
+    <a-assets>
+      <img id="vgtuLogo" src="VGTU-logo.png">
+    </a-assets> 
 
-    </a-scene>
+    <a-image
+      src="#vgtuLogo"
+      position="0 2.5 -3"
+      width="3"
+      height="2">
+    </a-image>  
 
-<div class="ui">
+    <a-entity 
+      camera 
+      position="0 1.6 0"  
+      look-controls
+      wasd-controls>
+    </a-entity>
+
+    <a-plane
+      rotation="-90 0 0"
+      height="100"
+      width="100"
+      color="#1f3b4d">
+    </a-plane>
+
+    <a-light type="ambient" color="#ffffff"></a-light>
+
+    <a-light
+      type="point"
+      intensity="2"
+      position="2 4 4">
+    </a-light>
+
+    <a-sky color="#0b1d2a"></a-sky>
+
+    <a-entity laser-controls></a-entity>
+
+    <a-box
+      id="model"
+      position="1 1 -2"
+      rotation="0 45 0"
+      color="#4cc3d9">
+    </a-box>
+  </a-scene>
+
+
+  <div class="ui">
 
     <div>
       <button id="rotLeft">Sukti kairėn</button>
@@ -53,9 +83,11 @@
       <button id="scaleUp">Padidinti</button>
       <button id="scaleDown">Sumažinti</button>
     </div>
-</div>
 
-<script src="js/controls.js"></script>
+  </div>
 
-  </body>
+
+  <script src="js/control.js"></script>
+
+</body>
 </html>
