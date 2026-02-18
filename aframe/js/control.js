@@ -59,3 +59,26 @@ document.addEventListener("DOMContentLoaded", () => {
       z: pos.z
     });
   });
+
+
+    const scaleStep = 0.1;
+
+  document.getElementById("scaleUp").addEventListener("click", () => {
+    const scale = model.getAttribute("scale");
+
+    model.setAttribute("scale", {
+      x: scale.x + scaleStep,
+      y: scale.y + scaleStep,
+      z: scale.z + scaleStep
+    });
+  });
+
+  document.getElementById("scaleDown").addEventListener("click", () => {
+    const scale = model.getAttribute("scale");
+
+    model.setAttribute("scale", {
+      x: Math.max(0.1, scale.x - scaleStep),
+      y: Math.max(0.1, scale.y - scaleStep),
+      z: Math.max(0.1, scale.z - scaleStep)
+    });
+  });
