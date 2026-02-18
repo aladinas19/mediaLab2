@@ -1,17 +1,22 @@
 console.log("controls.js užkrautas");
 
 window.addEventListener("load", () => {
-
-    const model = document.querySelector("#model");
-
+  const model = document.querySelector("#model");
 
   if (!model) {
     console.error("Modelis nerastas");
     return;
   }
 
-  model.addEventListener("loaded", () => {
+  // CLICK: random spalva (veiks ir su A-Frame click)
+  model.addEventListener("click", () => {
+    const randomColor =
+      "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0");
+    model.setAttribute("color", randomColor);
+  });
 
+  // Kai A-Frame pilnai paruošia objektą
+  model.addEventListener("loaded", () => {
     console.log("Modelis pilnai užkrautas");
 
     document.getElementById("rotLeft").onclick = () => {
@@ -49,7 +54,5 @@ window.addEventListener("load", () => {
       model.object3D.scale.y = Math.max(0.1, model.object3D.scale.y - 0.1);
       model.object3D.scale.z = Math.max(0.1, model.object3D.scale.z - 0.1);
     };
-
   });
-
 });
