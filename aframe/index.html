@@ -18,7 +18,7 @@
 
       <a-entity laser-controls></a-entity>
 
-      <a-pointcloud 
+      <a-pointcloud id="model"
           scale="0.5 0.5 0.5" 
           position="0 1 -3" 
           src="url(Sphere.ply)" 
@@ -27,5 +27,13 @@
           depthWrite="false">
       </a-pointcloud>
     </a-scene>
+    <div class="ui">
+  <button id="rotLeft">Sukti kairėn</button>
+  <button id="rotRight">Sukti dešinėn</button>
+</div>
+
+<script src="js/controls.js"></script>
+<link rel="stylesheet" href="style.css">
+
   </body>
 </html>
